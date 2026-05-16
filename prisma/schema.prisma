@@ -1,0 +1,279 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Level {
+  id                   String   @id @default(cuid())
+  code                 String   @unique
+  title                String
+  description          String
+  expectedCapabilities String
+  expectedSkills       String
+  order                Int
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  users            User[]
+  learningContents LearningContent[]
+  practiceTasks    PracticeTask[]
+  learningPaths    LearningPath[]
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  streak    Int      @default(0)
+  xp        Int      @default(0)
+  levelId   String?
+  level     Level?   @relation(fields: [levelId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  attempts           Attempt[]
+  evaluations        Evaluation[]
+  reviewItems        ReviewItem[]
+  progressSnapshot   UserProgressSnapshot?
+  contentProgress    UserContentProgress[]
+}
+
+/// Month pack (Month 01 Professional Foundation, etc.)
+model CurriculumMonth {
+  id             String              @id @default(cuid())
+  monthKey       String              @unique
+  title          String
+  durationWeeks  Int                 @default(4)
+  targetBand     String?
+  learnerJson    String?
+  designNotesJson String?
+  rubricTemplatesJson String?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+  missions       CurriculumMission[]
+}
+
+/// Stable mission id from curriculum JSON (e.g. w1-m1); one PracticeTask per speaking mission.
+/// See docs/curriculum-schema-overview.md (minimal FKs + JSON blobs; avoid churn).
+model CurriculumMission {
+  id                 String          @id @default(cuid())
+  missionKey         String          @unique
+  curriculumMonthId  String
+  curriculumMonth    CurriculumMonth @relation(fields: [curriculumMonthId], references: [id], onDelete: Cascade)
+  practiceTaskId     String          @unique
+  practiceTask       PracticeTask    @relation(fields: [practiceTaskId], references: [id], onDelete: Cascade)
+  weekNumber         Int
+  orderInWeek        Int
+  weekSlug           String          @default("")
+  weekTitle          String          @default("")
+  learningObjective  String          @default("")
+  targetCEFR         String          @default("")
+  scenario           String          @default("")
+  prompt             String          @default("")
+  timeTargetSec      Int             @default(90)
+  passOverallThreshold Int           @default(60)
+  requiredElementsJson String        @default("[]")
+  usefulPhrasesJson  String          @default("[]")
+  successCriteriaJson String         @default("[]")
+  reviewDrillsJson   String          @default("[]")
+  evaluationWeightsJson String       @default("{}")
+  modelAnswer        String          @default("")
+
+  @@index([curriculumMonthId, weekNumber, orderInWeek])
+}
+
+model LearningContent {
+  id               String   @id @default(cuid())
+  title            String
+  description      String?
+  type             String
+  cefrLevelId      String?
+  cefrLevel        Level?   @relation(fields: [cefrLevelId], references: [id])
+  skillType        String?
+  topic            String?
+  source           String?
+  sourceType       String?
+  localPath        String   @unique
+  /// Path under content/ to the parent folder (no leading slash), e.g. CursoIngles/Unidade1
+  folderPath       String   @default("")
+  tags             String   @default("[]")
+  difficulty       String?
+  estimatedMinutes Int?
+  notes            String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  practiceTaskLinks PracticeTaskContent[]
+  userProgress        UserContentProgress[]
+
+  @@index([folderPath])
+}
+
+model UserContentProgress {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  learningContentId String
+  learningContent   LearningContent @relation(fields: [learningContentId], references: [id], onDelete: Cascade)
+  /// not_started | in_progress | completed | skipped
+  status            String   @default("not_started")
+  lastOpenedAt      DateTime?
+  completedAt       DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([userId, learningContentId])
+  @@index([userId])
+}
+
+model LearningPath {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  levelId     String
+  level       Level    @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  steps LearningPathStep[]
+}
+
+model LearningPathStep {
+  id             String       @id @default(cuid())
+  learningPathId String
+  learningPath   LearningPath @relation(fields: [learningPathId], references: [id], onDelete: Cascade)
+  stepType       String
+  referenceId    String
+  order          Int
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@index([learningPathId, order])
+}
+
+model PracticeTask {
+  id                   String   @id @default(cuid())
+  title                String
+  description          String
+  instructions         String
+  cefrLevelId          String
+  cefrLevel            Level    @relation(fields: [cefrLevelId], references: [id])
+  skillType            String
+  scenarioType         String   @default("general_fluency")
+  category             String
+  estimatedDurationSec Int      @default(120)
+  expectedOutputType   String   @default("spoken_monologue")
+  evaluationRubric     String?
+  promptTemplate       String?
+  orderIndex           Int      @default(0)
+  isActive             Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  contents           PracticeTaskContent[]
+  attempts           Attempt[]
+  reviewItems        ReviewItem[]
+  curriculumMission  CurriculumMission?
+
+  @@index([cefrLevelId])
+}
+
+model PracticeTaskContent {
+  id                String @id @default(cuid())
+  practiceTaskId    String
+  learningContentId String
+  practiceTask      PracticeTask    @relation(fields: [practiceTaskId], references: [id], onDelete: Cascade)
+  learningContent   LearningContent @relation(fields: [learningContentId], references: [id], onDelete: Cascade)
+
+  @@unique([practiceTaskId, learningContentId])
+}
+
+model Attempt {
+  id             String   @id @default(cuid())
+  practiceTaskId String
+  practiceTask   PracticeTask @relation(fields: [practiceTaskId], references: [id], onDelete: Cascade)
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  audioPath      String?
+  transcriptText String?
+  durationSec    Int?
+  status         String   @default("pending_evaluation")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  evaluation  Evaluation?
+  reviewItems ReviewItem[]
+
+  @@index([userId, practiceTaskId])
+}
+
+model Evaluation {
+  id                  String   @id @default(cuid())
+  attemptId           String   @unique
+  attempt             Attempt  @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  userId              String
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  overallScore        Int
+  estimatedCefr       String
+  grammarScore        Int
+  vocabularyScore     Int
+  clarityScore        Int
+  coherenceScore      Int
+  taskCompletionScore Int
+  strengths           String
+  weaknesses          String
+  mainCorrections     String
+  rewrittenAnswer     String
+  suggestedVocabulary String
+  nextStep            String
+  /// acquire | practice | adjust
+  apaPhase            String   @default("practice")
+  apaReason           String   @default("Keep practicing with targeted feedback.")
+  apaMicroGoal        String   @default("Use the feedback in your next attempt.")
+  llmModel            String?
+  /// Optional link to curriculum mission when evaluation is mission-based
+  curriculumMissionKey String?
+  /// Extended mission feedback (phrase checks, rubric hints, etc.)
+  feedbackJson        String?
+  createdAt           DateTime @default(now())
+
+  @@index([userId])
+}
+
+model ReviewItem {
+  id             String        @id @default(cuid())
+  userId         String
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attemptId      String?
+  attempt        Attempt?      @relation(fields: [attemptId], references: [id], onDelete: SetNull)
+  practiceTaskId String?
+  practiceTask   PracticeTask? @relation(fields: [practiceTaskId], references: [id], onDelete: SetNull)
+  dueAt          DateTime
+  reason         String
+  status         String        @default("pending")
+  /// Curriculum drill id (e.g. w1-r1) when review is drill-based
+  drillId        String?
+  drillType      String?
+  drillTitle     String?
+  drillInstructions String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([userId, status])
+}
+
+model UserProgressSnapshot {
+  id                    String   @id @default(cuid())
+  userId                String   @unique
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  estimatedOverallLevel String?
+  totalPracticeMinutes  Int      @default(0)
+  totalAttempts         Int      @default(0)
+  weeklyConsistency     Int      @default(0)
+  lastUpdatedAt         DateTime @updatedAt
+}

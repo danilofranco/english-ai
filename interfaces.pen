@@ -1,0 +1,2059 @@
+{
+  "version": "2.11",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Playlist — English AI (telas do App Router)",
+      "clip": true,
+      "width": 1314,
+      "height": 5644,
+      "fill": "#09090b",
+      "layout": "vertical",
+      "gap": 48,
+      "padding": 40,
+      "children": [
+        {
+          "type": "frame",
+          "id": "P11pE",
+          "name": "00 · Legenda",
+          "width": "fill_container",
+          "fill": "#1e1b4b",
+          "cornerRadius": 10,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#6366f1"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "B0qGF",
+              "name": "ix",
+              "fill": "#eef2ff",
+              "content": "English AI — wireframes baseados no código atual (dashboard shell, APIs, APA).",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "S4NjYG",
+              "name": "iy",
+              "fill": "#c7d2fe",
+              "content": "Ordem ≈ fluxo: marketing → auth → dashboard → practice → avaliação · biblioteca · reviews · progress · chat · levels · paths. Lesson = redirect legacy.",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "M0OQh",
+          "name": "01 / — Home (page.tsx)",
+          "width": 1200,
+          "fill": "#f8fafc",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#e4e4e7"
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "IYQpy",
+              "name": "hd",
+              "width": "fill_container",
+              "fill": "#ffffff",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#e4e4e7"
+              },
+              "padding": 16,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vqByd",
+                  "name": "ht",
+                  "fill": "#7c3aed",
+                  "content": "English AI",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "cJO9k",
+                  "name": "hn",
+                  "fill": "#52525b",
+                  "content": "Sign In          Get Started",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "OsCxu",
+              "name": "hero",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 40,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "V9ACZE",
+                  "name": "h1",
+                  "fill": "#18181b",
+                  "content": "Learn English with AI",
+                  "fontFamily": "Inter",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "BEPwI",
+                  "name": "sub",
+                  "fill": "#71717a",
+                  "content": "Personalize your journey — AI conversations, grammar, vocabulary.",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "hEPNw",
+                  "name": "cta",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QRf8Q",
+                      "name": "c1",
+                      "fill": "#7c3aed",
+                      "content": "[ Start Learning Free ]",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "SIgkE",
+                      "name": "c2",
+                      "fill": "#52525b",
+                      "content": "[ Sign In ]",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "kaEHo",
+              "name": "why",
+              "fill": "#18181b",
+              "content": "Why English AI?",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "PO1rZ",
+              "name": "grid",
+              "width": "fill_container",
+              "gap": 20,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mK49V",
+                  "name": "g1",
+                  "width": 360,
+                  "fill": "#ffffff",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#e4e4e7"
+                  },
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "V5t4rR",
+                      "name": "g1t",
+                      "fill": "#18181b",
+                      "content": "AI Conversations",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ebLi7",
+                      "name": "g1d",
+                      "fill": "#71717a",
+                      "content": "Practice speaking — corrections in real time.",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ofxXS",
+                  "name": "g2",
+                  "width": 360,
+                  "fill": "#ffffff",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#e4e4e7"
+                  },
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qJtOg",
+                      "name": "g2t",
+                      "fill": "#18181b",
+                      "content": "Structured Learning",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jTY7j",
+                      "name": "g2d",
+                      "fill": "#71717a",
+                      "content": "CEFR path A1 → C2.",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "s5zuw4",
+                  "name": "g3",
+                  "width": 360,
+                  "fill": "#ffffff",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#e4e4e7"
+                  },
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "HWuhN",
+                      "name": "g3t",
+                      "fill": "#18181b",
+                      "content": "Track Progress",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "nbb7Y",
+                      "name": "g3d",
+                      "fill": "#71717a",
+                      "content": "Streak, XP, level snapshot.",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "L83IEe",
+              "name": "bottom",
+              "width": "fill_container",
+              "fill": "#eef2ff",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lXJ1E",
+                  "name": "b1",
+                  "fill": "#18181b",
+                  "content": "Ready to start?",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "z7H87",
+                  "name": "b2",
+                  "fill": "#4f46e5",
+                  "content": "[ Get Started Free ]",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "xouv4",
+              "name": "ft",
+              "fill": "#a1a1aa",
+              "content": "Footer · © English AI",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "EZO2s",
+          "name": "02 /login",
+          "width": 1200,
+          "fill": "#faf5ff",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 32,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "i2BI84",
+              "name": "lb",
+              "fill": "#7c3aed",
+              "content": "English AI",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "rwSOT",
+              "name": "ls",
+              "fill": "#71717a",
+              "content": "Learn English with AI",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "tiIfP",
+              "name": "lc",
+              "width": 420,
+              "fill": "#ffffff",
+              "cornerRadius": 12,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#e4e4e7"
+              },
+              "layout": "vertical",
+              "gap": 14,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YaTpz",
+                  "name": "lh",
+                  "fill": "#18181b",
+                  "content": "Sign In",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "QM6JP",
+                  "name": "le",
+                  "fill": "#71717a",
+                  "content": "Email",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "BTdj0",
+                  "name": "lf",
+                  "fill": "#18181b",
+                  "content": "[ input · email ]",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "UTC8Y",
+                  "name": "lp",
+                  "fill": "#71717a",
+                  "content": "Password",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Qn6MS",
+                  "name": "lx",
+                  "fill": "#18181b",
+                  "content": "[ input · password ]",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "aJ5j5",
+                  "name": "lbu",
+                  "fill": "#7c3aed",
+                  "content": "[ Signing in… / Sign In ]",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "UDFEu",
+                  "name": "ll",
+                  "fill": "#71717a",
+                  "content": "Don’t have an account? Sign up → /register",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "sIbcm",
+          "name": "03 /register",
+          "width": 1200,
+          "fill": "#faf5ff",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 32,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "BXoIV",
+              "name": "rb",
+              "fill": "#7c3aed",
+              "content": "English AI",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "cngct",
+              "name": "rs",
+              "fill": "#71717a",
+              "content": "Start your journey",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "gMRhI",
+              "name": "rc",
+              "width": 420,
+              "fill": "#ffffff",
+              "cornerRadius": 12,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#e4e4e7"
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fncE2",
+                  "name": "rh",
+                  "fill": "#18181b",
+                  "content": "Create Account",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "Zqj1c",
+                  "name": "rn",
+                  "fill": "#71717a",
+                  "content": "Name · Email · Password",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "hpTyy",
+                  "name": "rfn",
+                  "fill": "#52525b",
+                  "content": "[ inputs ] → POST /api/register → signIn",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Dg2l8",
+                  "name": "rbu",
+                  "fill": "#7c3aed",
+                  "content": "[ Create account ]",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "E3R5k",
+                  "name": "rl",
+                  "fill": "#71717a",
+                  "content": "Already have account? Sign in",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HOL26",
+          "name": "04 /dashboard (layout + page)",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "E07Nb",
+              "name": "nav",
+              "width": "fill_container",
+              "fill": "#0f0f12",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#27272a"
+              },
+              "padding": 12,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "e8yIA",
+                  "name": "nt",
+                  "fill": "#a855f7",
+                  "content": "English AI",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "QzDkw",
+                  "name": "nl",
+                  "fill": "#a1a1aa",
+                  "content": "Dashboard · Practice · Reviews · Progress · Library · Levels",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "i73A5i",
+              "name": "main",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "McW6t",
+                  "name": "wel",
+                  "fill": "#fafafa",
+                  "content": "Welcome back!",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "RysWU",
+                  "name": "wes",
+                  "fill": "#a1a1aa",
+                  "content": "Ready to continue your English journey?",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "r7xxkh",
+                  "name": "st",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "i53jPe",
+                      "name": "st1",
+                      "width": 260,
+                      "fill": "#18181b",
+                      "cornerRadius": 10,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "E1f8v",
+                          "name": "st1a",
+                          "fill": "#a1a1aa",
+                          "content": "This Week",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "iO2tG",
+                          "name": "st1b",
+                          "fill": "#fafafa",
+                          "content": "·",
+                          "fontFamily": "Inter",
+                          "fontSize": 22,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "eaOTw",
+                      "name": "st2",
+                      "width": 260,
+                      "fill": "#18181b",
+                      "cornerRadius": 10,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "r0MMN",
+                          "name": "st2a",
+                          "fill": "#a1a1aa",
+                          "content": "Avg Score",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vXVmF",
+                          "name": "st2b",
+                          "fill": "#fafafa",
+                          "content": "·",
+                          "fontFamily": "Inter",
+                          "fontSize": 22,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "piVug",
+                      "name": "st3",
+                      "width": 260,
+                      "fill": "#18181b",
+                      "cornerRadius": 10,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "I1ygP",
+                          "name": "st3a",
+                          "fill": "#a1a1aa",
+                          "content": "Total Practices",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Rf0Q4",
+                          "name": "st3b",
+                          "fill": "#fafafa",
+                          "content": "·",
+                          "fontFamily": "Inter",
+                          "fontSize": 22,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "g9m5M",
+                      "name": "st4",
+                      "width": 260,
+                      "fill": "#18181b",
+                      "cornerRadius": 10,
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GU0uE",
+                          "name": "st4a",
+                          "fill": "#a1a1aa",
+                          "content": "Tasks Done",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "lFTxq",
+                          "name": "st4b",
+                          "fill": "#fafafa",
+                          "content": "·",
+                          "fontFamily": "Inter",
+                          "fontSize": 22,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "msGS2",
+                  "name": "mid",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "peoNZ",
+                      "name": "mid1",
+                      "width": "fill_container",
+                      "fill": "#18181b",
+                      "cornerRadius": 10,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#a855f733"
+                      },
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "T1ttgH",
+                          "name": "mid1a",
+                          "fill": "#a1a1aa",
+                          "content": "Estimated level (from practice)",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ucJq4",
+                          "name": "mid1b",
+                          "fill": "#a855f7",
+                          "content": "—",
+                          "fontFamily": "Inter",
+                          "fontSize": 28,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "UtsZX",
+                          "name": "mid1c",
+                          "fill": "#a1a1aa",
+                          "content": "pendingReviews queue",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "M9ACt",
+                      "name": "mid2",
+                      "width": "fill_container",
+                      "fill": "#18181b",
+                      "cornerRadius": 10,
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZaNh4",
+                          "name": "mid2a",
+                          "fill": "#fafafa",
+                          "content": "Review today",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "IgkdK",
+                          "name": "mid2b",
+                          "fill": "#a855f7",
+                          "content": "[ Open queue ] → /reviews",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "f0Y7S",
+                  "name": "apa",
+                  "width": "fill_container",
+                  "fill": "#0f172a",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#3b82f6"
+                  },
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FByOQ",
+                      "name": "apa1",
+                      "fill": "#93c5fd",
+                      "content": "APA next step",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tAVER",
+                      "name": "apa2",
+                      "fill": "#60a5fa",
+                      "content": "{phase PT} · acquire | practice | adjust",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tQITi",
+                      "name": "apa3",
+                      "fill": "#cbd5e1",
+                      "content": "apaReason · apaMicroGoal (Evaluation)",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "C4haF",
+                  "name": "wk",
+                  "fill": "#d4d4d8",
+                  "content": "Suggested content (weakHints) · cards → /library",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "qbRnn",
+                  "name": "pr",
+                  "width": "fill_container",
+                  "fill": "#18181b",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "yfyUY",
+                      "name": "prh",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "rU66I",
+                          "name": "prh1",
+                          "fill": "#fafafa",
+                          "content": "Practice now · Real tasks",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "y6TlDd",
+                          "name": "prh2",
+                          "fill": "#a855f7",
+                          "content": "[ Practice Now ]",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "qA4fE",
+                      "name": "prg",
+                      "fill": "#a1a1aa",
+                      "content": "Weekly goal · bar min(thisWeek,5)/5",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fVVMn",
+                      "name": "prc",
+                      "fill": "#a1a1aa",
+                      "content": "Chips: Career · Product/Tech · General · Content",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Q74QKp",
+                  "name": "rec",
+                  "fill": "#a1a1aa",
+                  "content": "Recent Practice · taskTitle · score · date",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TFZMa",
+          "name": "05 /practice — catálogo",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "yzd6C",
+              "name": "pnv",
+              "width": "fill_container",
+              "fill": "#0f0f12",
+              "padding": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vwZD1",
+                  "name": "pnl",
+                  "fill": "#a1a1aa",
+                  "content": "English AI · Dashboard · Practice · Reviews · Progress · Library · Levels",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "C5MtXQ",
+              "name": "pm",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Nr6uJ",
+                  "name": "ph",
+                  "fill": "#fafafa",
+                  "content": "Practice Library",
+                  "fontFamily": "Inter",
+                  "fontSize": 26,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "k5HgIw",
+                  "name": "ps",
+                  "fill": "#a1a1aa",
+                  "content": "Choose a task · GET /api/tasks?category=",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "JJ0KS",
+                  "name": "pfx",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "o5FGs",
+                      "name": "psh",
+                      "fill": "#e4e4e7",
+                      "content": "🔎 [ Search tasks… ]",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xUbTT",
+                      "name": "pch",
+                      "fill": "#a855f7",
+                      "content": "All · Career · Product/Tech · General · Content",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "LFbju",
+                  "name": "tc",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OJn1N",
+                      "name": "t1",
+                      "width": "fill_container",
+                      "fill": "#18181b",
+                      "cornerRadius": 10,
+                      "padding": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dQFkQ",
+                          "name": "t1x",
+                          "fill": "#d4d4d8",
+                          "content": "Link row · icon · title · B1 · description · ⏱ · category · ›",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "D07x0Z",
+                      "name": "t2",
+                      "width": "fill_container",
+                      "fill": "#18181b",
+                      "cornerRadius": 10,
+                      "padding": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SKufi",
+                          "name": "t2x",
+                          "fill": "#71717a",
+                          "content": "(repetir por task da API)",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YLCyw",
+          "name": "06 /practice/[id] — gravação",
+          "width": 1200,
+          "fill": "#030712",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "sygCJ",
+              "name": "tbh",
+              "fill": "#a1a1aa",
+              "content": "← Back to Library · task.title",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "BTuBB",
+              "name": "tmeta",
+              "width": "fill_container",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Gbrif",
+                  "name": "tm1",
+                  "fill": "#a1a1aa",
+                  "content": "CEFR badge",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "u49hf",
+                  "name": "tm2",
+                  "fill": "#a1a1aa",
+                  "content": "category · ⏱ min",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AOMwv",
+              "name": "tins",
+              "width": "fill_container",
+              "fill": "#111827",
+              "cornerRadius": 10,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "hZ9Up",
+                  "name": "tinz",
+                  "fill": "#fafafa",
+                  "content": "Instructions (practiceTask.instructions)",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "i7yMXe",
+              "name": "trel",
+              "fill": "#6b7280",
+              "content": "Related from library (PracticeTaskContent)",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "LmaF7",
+              "name": "trec",
+              "width": "fill_container",
+              "fill": "#1f2937",
+              "cornerRadius": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "p3mPTz",
+                  "name": "trcx",
+                  "fill": "#d1d5db",
+                  "content": "AudioRecorder · transcribe → POST /api/transcribe · submit → POST /api/attempts · POST /api/evaluate",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yjJWs",
+          "name": "07 /practice/[id]/review/[attemptId]",
+          "width": 1200,
+          "fill": "#030712",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "clotW",
+              "name": "rvh",
+              "fill": "#9ca3af",
+              "content": "← Back to practice · Evaluation",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "CqpZi",
+              "name": "rvs",
+              "fill": "#fafafa",
+              "content": "Overall · Estimated CEFR",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "CoOlE",
+              "name": "rvgrid",
+              "width": "fill_container",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "G9KPL",
+                  "name": "rvg",
+                  "fill": "#9ca3af",
+                  "content": "Grammar · Vocab · Clarity · Coherence · Task",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Q3sJEh",
+              "name": "apab",
+              "width": "fill_container",
+              "fill": "#111827",
+              "cornerRadius": 10,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#2563eb"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IlpWb",
+                  "name": "apabt",
+                  "fill": "#93c5fd",
+                  "content": "APA next step · phase · reason · microGoal",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "EfcKe",
+              "name": "rvst",
+              "fill": "#d1d5db",
+              "content": "Strengths · Weaknesses · Corrections · Rewritten · Vocab · Next step",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "sHP0A",
+              "name": "rvlk",
+              "fill": "#6b7280",
+              "content": "Actions: Retry · Library · Other tasks",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SS9DD",
+          "name": "08 /library",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "u8cHD",
+              "name": "lh",
+              "fill": "#fafafa",
+              "content": "📚 Biblioteca",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "G6rW6",
+              "name": "ls",
+              "fill": "#a1a1aa",
+              "content": "content/ sync · npm run content:sync",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "N2se16",
+              "name": "lfx",
+              "fill": "#d4d4d8",
+              "content": "Filtros: Tipo · Curso · Pasta (folder query)",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "AknDm",
+              "name": "lit",
+              "width": "fill_container",
+              "fill": "#18181b",
+              "cornerRadius": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "l9qSO",
+                  "name": "lix",
+                  "fill": "#a1a1aa",
+                  "content": "Lista de LearningContent · link → /library/[id]",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "X4nuYd",
+          "name": "09 /library/[id]",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "B3LBfe",
+              "name": "lidh",
+              "fill": "#fafafa",
+              "content": "Conteúdo · navegação pasta prev/next",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "p3NxB",
+              "name": "lidb",
+              "fill": "#a1a1aa",
+              "content": "Texto / markdown · POST progress open/complete",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Y4jpQs",
+          "name": "10 /reviews — fila",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "E06jEz",
+              "name": "rqh",
+              "fill": "#fafafa",
+              "content": "Review queue · GET /api/reviews",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "VSZvc",
+              "name": "rqs",
+              "fill": "#a1a1aa",
+              "content": "Reties from weak scores · formatReviewReason (APA)",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "uKK8b",
+              "name": "rqc",
+              "width": "fill_container",
+              "fill": "#18181b",
+              "cornerRadius": 10,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ZP78x",
+                  "name": "rqcx",
+                  "fill": "#d4d4d8",
+                  "content": "Card · task title · APA phase · due · [ Retry → /practice/id ]",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hk726",
+          "name": "11 /history",
+          "width": 1200,
+          "fill": "#030712",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "WJDOy",
+              "name": "hih",
+              "fill": "#fafafa",
+              "content": "Practice History · GET /api/attempts",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "JDCbu",
+              "name": "hiw",
+              "width": "fill_container",
+              "fill": "#111827",
+              "cornerRadius": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "C4ZPBa",
+                  "name": "hiwx",
+                  "fill": "#9ca3af",
+                  "content": "Row · status · date · transcript snippet · score",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uK7fq",
+          "name": "12 /progress",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "a0Q55",
+              "name": "prh",
+              "fill": "#fafafa",
+              "content": "Progress · GET /api/progress",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "s5PZc",
+              "name": "prs",
+              "width": "fill_container",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Ghp0W",
+                  "name": "p1",
+                  "width": 320,
+                  "fill": "#18181b",
+                  "cornerRadius": 10,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XdxxB",
+                      "name": "p1t",
+                      "fill": "#a1a1aa",
+                      "content": "Estimated level",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "IPWg6",
+                  "name": "p2",
+                  "width": 320,
+                  "fill": "#18181b",
+                  "cornerRadius": 10,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bpTGp",
+                      "name": "p2t",
+                      "fill": "#a1a1aa",
+                      "content": "Practice minutes",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "niUi7",
+                  "name": "p3",
+                  "width": 320,
+                  "fill": "#18181b",
+                  "cornerRadius": 10,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "A0DHO",
+                      "name": "p3t",
+                      "fill": "#a1a1aa",
+                      "content": "Evaluated attempts",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "gTbcB",
+              "name": "prt",
+              "fill": "#d4d4d8",
+              "content": "By task · trend rows (avgScore, lastScore)",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "IRh9f",
+          "name": "13 /chat — tutor",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "km6Me",
+              "name": "chh",
+              "width": "fill_container",
+              "fill": "#0f0f12",
+              "padding": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "q4qqAC",
+                  "name": "chhl",
+                  "fill": "#a1a1aa",
+                  "content": "← Dashboard · topic selector · Clear",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "S2ENOf",
+              "name": "chm",
+              "width": "fill_container",
+              "height": 320,
+              "fill": "#09090b",
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QTw8l",
+                  "name": "chmx",
+                  "fill": "#d4d4d8",
+                  "content": "Messages scroll · user / assistant · feedback strip",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QLe9K",
+              "name": "chi",
+              "width": "fill_container",
+              "fill": "#0f0f12",
+              "padding": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XJ6qw",
+                  "name": "chin",
+                  "fill": "#e4e4e7",
+                  "content": "[ input ] · Send · POST /api/chat · DeepSeek",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "q7EiE",
+          "name": "14 /levels — CEFR",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "CRHC8",
+              "name": "lxh",
+              "fill": "#fafafa",
+              "content": "CEFR levels · GET /api/levels",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "pHHp8",
+              "name": "lxs",
+              "fill": "#a1a1aa",
+              "content": "Cards · code · title · tasks/paths/content",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "bfE3q",
+              "name": "lvCard",
+              "width": "fill_container",
+              "fill": "#18181b",
+              "cornerRadius": 10,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TJxBU",
+                  "name": "lxx",
+                  "fill": "#d4d4d8",
+                  "content": "A1 … C2 · link /levels/[code]",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "sgrG8",
+          "name": "15 /levels/[code]",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "KCJX1",
+              "name": "ld1",
+              "fill": "#a1a1aa",
+              "content": "← Levels · band · expectedCapabilities",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "dVGIw",
+              "name": "ld2",
+              "fill": "#d4d4d8",
+              "content": "Tasks · Paths · Library + progress",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "T1hzZ3",
+          "name": "16 /levels/[code]/quiz",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "saZb9",
+              "name": "qzh",
+              "fill": "#fafafa",
+              "content": "Quiz · /api/ai/quiz",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "J7Oygl",
+              "name": "qzm",
+              "fill": "#a1a1aa",
+              "content": "generate · correct · score · corrections",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "OQNCX",
+          "name": "17 /module/[id]/chat",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "o4lX11",
+              "name": "mch",
+              "fill": "#fafafa",
+              "content": "Voice chat module · /api/ai/chat",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "QR5yQ",
+              "name": "mcb",
+              "fill": "#a1a1aa",
+              "content": "SpeechRecognition · session",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "al1a5",
+          "name": "18 /paths/[id]",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "mvP7e",
+              "name": "pthh",
+              "fill": "#fafafa",
+              "content": "Path title · steps · links",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "g06oM",
+              "name": "pths",
+              "fill": "#a1a1aa",
+              "content": "GET /api/paths/[id]",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bmeE0",
+          "name": "19 /lesson",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "Q2CMLH",
+              "name": "lesx",
+              "fill": "#fbbf24",
+              "content": "Redirect → /library",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lESAk",
+          "name": "20 /lesson/[id]",
+          "width": 1200,
+          "fill": "#09090b",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#27272a"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "X5CqpP",
+              "name": "les2x",
+              "fill": "#fbbf24",
+              "content": "replace(/library) · sem UI",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
