@@ -2,23 +2,6 @@ import { NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { getServerSession } from '@/lib/auth'
 import { looksLikePlaceholderTranscript } from '@/lib/transcription-validation'
-import { writeFile, mkdir } from 'fs/promises'
-import { join } from 'path'
-
-async function saveAudioFile(
-  audioBlob: Blob,
-  userId: string,
-  taskId: string
-): Promise<string> {
-  const buffer = Buffer.from(await audioBlob.arrayBuffer())
-  const filename = `${userId}-${taskId}-${Date.now()}.webm`
-  const filepath = join(process.cwd(), 'public', 'recordings', filename)
-
-  await mkdir(join(process.cwd(), 'public', 'recordings'), { recursive: true })
-  await writeFile(filepath, buffer)
-
-  return `/recordings/${filename}`
-}
 
 export async function POST(request: Request) {
   try {
@@ -28,18 +11,17 @@ export async function POST(request: Request) {
     }
 
     const formData = await request.formData()
-    const taskId = formData.get('taskId') as string
+    const taskId = formData.get('taskId')
     const userId = session.user.id
-    const audioFile = formData.get('audio') as Blob
-    const transcription = formData.get('transcription') as string
-    const durationSecRaw = formData.get('durationSec') as string | null
-    const durationSec = durationSecRaw ? parseInt(durationSecRaw, 10) : null
+    const transcription = formData.get('transcription')
+    const durationSecRaw = formData.get('durationSec')
+    const durationSec = typeof durationSecRaw === 'string' ? parseInt(durationSecRaw, 10) : null
 
-    if (!userId || !taskId) {
+    if (typeof taskId !== 'string' || !taskId) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    if (looksLikePlaceholderTranscript(transcription)) {
+    if (typeof transcription !== 'string' || looksLikePlaceholderTranscript(transcription)) {
       return NextResponse.json(
         {
           error:
@@ -49,25 +31,19 @@ export async function POST(request: Request) {
       )
     }
 
-    let audioPath: string | null = null
-    if (audioFile && audioFile.size > 0) {
-      audioPath = await saveAudioFile(audioFile, userId, taskId)
-    }
-
     const attempt = await db.attempt.create({
       data: {
         userId,
         practiceTaskId: taskId,
-        audioPath,
         transcriptText: transcription || null,
-        durationSec: Number.isFinite(durationSec as number) ? durationSec : null,
+        durationSec: Number.isFinite(durationSec) ? durationSec : null,
         status: 'pending_evaluation',
       },
     })
 
     return NextResponse.json(attempt)
   } catch (error) {
-    console.error('Error creating attempt:', error)
+    console.error('Error creating attempt:', error instanceof Error ? error.name : 'UnknownError')
     return NextResponse.json({ error: 'Failed to create attempt' }, { status: 500 })
   }
 }
@@ -101,7 +77,7 @@ export async function GET(request: Request) {
 
     const total = await db.attempt.count({ where })
 
-    return NextResponse.json({ attempts, total })
+    return NextResponse.json({ attempts: attempts.map((attempt) => ({ ...attempt, audioPath: null })), total })
   } catch (error) {
     console.error('Error fetching attempts:', error)
     return NextResponse.json({ error: 'Failed to fetch attempts' }, { status: 500 })
