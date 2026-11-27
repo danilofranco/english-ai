@@ -8,7 +8,7 @@ export type TranscribeResult = { text: string; source: string }
 
 interface AudioRecorderProps {
   onTranscribe?: (audioBlob: Blob) => Promise<TranscribeResult | null>
-  onSubmit?: (audioBlob: Blob, transcription: string, durationSec: number) => Promise<void>
+  onSubmit?: (transcription: string, durationSec: number) => Promise<void>
   isTranscribing?: boolean
   isEvaluating?: boolean
 }
@@ -54,7 +54,9 @@ export default function AudioRecorder({
       }
 
       mediaRecorder.onstop = () => {
-        const blob = new Blob(chunksRef.current, { type: 'audio/webm' })
+        const blob = new Blob(chunksRef.current, {
+          type: mediaRecorder.mimeType || chunksRef.current[0]?.type || 'audio/webm',
+        })
         setAudioBlob(blob)
         const url = URL.createObjectURL(blob)
         setAudioUrl(url)
@@ -132,7 +134,7 @@ export default function AudioRecorder({
     
     setSubmitting(true)
     try {
-      await onSubmit(audioBlob, transcription, duration)
+      await onSubmit(transcription, duration)
     } finally {
       setSubmitting(false)
     }

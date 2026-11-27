@@ -121,14 +121,13 @@ export default function PracticePage({ params }: { params: Promise<{ id: string 
     }
   }
 
-  async function handleSubmit(audioBlob: Blob, transcription: string, durationSec: number) {
+  async function handleSubmit(transcription: string, durationSec: number) {
     if (!session?.user?.id || !task) return
     
     setEvaluating(true)
     try {
       const formData = new FormData()
       formData.append('taskId', task.id)
-      formData.append('audio', audioBlob)
       formData.append('transcription', transcription)
       formData.append('durationSec', String(durationSec))
 

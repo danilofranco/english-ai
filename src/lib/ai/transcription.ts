@@ -1,6 +1,5 @@
-import { readFile } from 'fs/promises'
-import { createReadStream } from 'fs'
-import OpenAI from 'openai'
+import { createReadStream } from 'node:fs'
+import OpenAI, { toFile } from 'openai'
 import { MOCK_TRANSCRIPTION_TEXT } from '@/lib/transcription-validation'
 
 export type TranscriptionSource = 'openai-whisper' | 'mock'
@@ -12,56 +11,31 @@ export interface TranscriptionResult {
   source: TranscriptionSource
 }
 
-function whisperLanguageHint(locale?: string): string | undefined {
-  if (!locale) return undefined
-  const short = locale.split('-')[0]?.toLowerCase()
-  if (!short || short.length !== 2) return undefined
-  return short
+async function transcribe(
+  upload: () => ReturnType<typeof toFile> | ReturnType<typeof createReadStream>,
+  locale?: string
+): Promise<TranscriptionResult> {
+  const apiKey = process.env.OPENAI_API_KEY?.trim()
+  if (!apiKey) {
+    return { text: MOCK_TRANSCRIPTION_TEXT, confidence: 0.85, durationSec: 30, source: 'mock' }
+  }
+
+  const language = /^([a-z]{2})(?:-[a-z]{2})?$/i.exec(locale ?? '')?.[1].toLowerCase()
+  const client = new OpenAI({ apiKey })
+  const result = await client.audio.transcriptions.create({
+    file: await upload(),
+    model: 'whisper-1',
+    ...(language ? { language } : {}),
+  })
+  const text = result.text.trim()
+  if (!text) throw new Error('Empty transcription from Whisper')
+  return { text, confidence: 1, durationSec: 0, source: 'openai-whisper' }
 }
 
-/**
- * Server-side transcription. Uses OpenAI Whisper when OPENAI_API_KEY is set.
- * Without a key: returns deterministic mock copy (blocked from evaluation unless user replaces it manually).
- */
-export async function transcribeAudioFile(
-  absolutePath: string,
-  language?: string
-): Promise<TranscriptionResult> {
-  const key = process.env.OPENAI_API_KEY
+export function transcribeRecording(audio: Blob, filename: string, locale?: string) {
+  return transcribe(() => toFile(audio, filename), locale)
+}
 
-  if (key?.trim()) {
-    const openai = new OpenAI({ apiKey: key })
-    try {
-      const lang = whisperLanguageHint(language)
-      const fileStream = createReadStream(absolutePath)
-      const tr = await openai.audio.transcriptions.create({
-        file: fileStream,
-        model: 'whisper-1',
-        ...(lang ? { language: lang } : {}),
-      })
-
-      const text = tr.text.trim()
-      if (!text) {
-        throw new Error('Empty transcription from Whisper')
-      }
-      return {
-        text,
-        confidence: 1,
-        durationSec: 0,
-        source: 'openai-whisper',
-      }
-    } catch (e) {
-      console.error('[transcription] whisper failed:', e)
-      throw e
-    }
-  }
-
-  void language
-  await readFile(absolutePath).catch(() => null)
-  return {
-    text: MOCK_TRANSCRIPTION_TEXT,
-    confidence: 0.85,
-    durationSec: 30,
-    source: 'mock',
-  }
+export function transcribeAudioFile(absolutePath: string, locale?: string) {
+  return transcribe(() => createReadStream(absolutePath), locale)
 }

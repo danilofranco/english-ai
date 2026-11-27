@@ -65,9 +65,15 @@ Não há publicação nem redistribuição — só uso local.
 
 | Função | Ficheiro | Notas |
 |--------|----------|------|
-| Transcrição servidor | [src/lib/ai/transcription.ts](src/lib/ai/transcription.ts) | Hoje: mock. Trocar por Whisper / AssemblyAI etc.; `POST /api/transcribe` já grava ficheiro e chama isto. |
+| Transcrição servidor | [src/lib/ai/transcription.ts](src/lib/ai/transcription.ts) | Whisper quando OPENAI_API_KEY está configurada e mock sem chave. `POST /api/transcribe` processa o áudio em memória. |
 | Avaliação | [src/lib/ai/evaluation.ts](src/lib/ai/evaluation.ts) | `evaluateResponse` → JSON com scores + strengths + `nextStep`. Persistido em [Evaluation](prisma/schema.prisma). |
 | Sync disco → BD | [src/lib/sync-learning-content.ts](src/lib/sync-learning-content.ts) | Chamado por `npm run content:sync`. |
+
+## Privacidade das gravações
+
+O áudio é reproduzido no navegador durante a prática. O servidor recebe a gravação na transcrição e, quando configurado, envia o áudio à API da OpenAI. A aplicação processa o pedido em memória e não guarda cópias de áudio. As tentativas guardam texto e duração para manter o histórico e a avaliação.
+
+A rota pública anterior responde 404. Antes de atualizar uma instalação existente, localize gravações legadas no diretório public/recordings, no armazenamento, nas versões implantadas e no cache do CDN. Remova as cópias públicas e trate o histórico Git separadamente. Caso uma obrigação de retenção se aplique, preserve apenas a cópia necessária em armazenamento privado com acesso restrito.
 
 ## Fluxo mínimo a testar
 
@@ -93,6 +99,7 @@ Não há publicação nem redistribuição — só uso local.
 ```bash
 npm run dev           # dev server
 npm run build         # prisma generate + next build
+node --import tsx --test scripts/recording-upload.test.mjs # validação de áudio
 npm run db:migrate    # prisma migrate deploy
 npm run db:seed       # seed níveis + tasks + paths + user demo
 npm run content:sync  # indexar /content → BD
