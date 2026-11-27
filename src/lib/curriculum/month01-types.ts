@@ -21,9 +21,9 @@ export const month01PackSchema = z.object({
   title: z.string(),
   durationWeeks: z.number(),
   targetBand: z.string().optional(),
-  learnerProfile: z.record(z.unknown()).optional(),
-  designNotes: z.record(z.unknown()).optional(),
-  rubricTemplates: z.record(z.unknown()).optional(),
+  learnerProfile: z.record(z.string(), z.unknown()).optional(),
+  designNotes: z.record(z.string(), z.unknown()).optional(),
+  rubricTemplates: z.record(z.string(), z.unknown()).optional(),
   weeks: z.array(
     z.object({
       weekNumber: z.number(),
@@ -36,10 +36,10 @@ export const month01PackSchema = z.object({
       vocabularyList: z.array(z.string()).optional(),
       usefulPhrases: z.array(z.string()).optional(),
       speakingMissions: z.array(speakingMissionSchema),
-      writingMission: z.record(z.unknown()).optional(),
+      writingMission: z.record(z.string(), z.unknown()).optional(),
       successCriteria: z.array(z.string()),
       evaluationRubricRef: z.string().optional(),
-      evaluationWeights: z.record(z.number()).optional(),
+      evaluationWeights: z.record(z.string(), z.number()).optional(),
       reviewDrills: z.array(reviewDrillSchema),
       modelAnswer: z.string().optional(),
     })

@@ -133,7 +133,7 @@ export default function ReviewPage({
           requiredElementsAutoCheck: { label: string; status: string }[]
           usefulPhrasesAutoCheck?: { phrase: string; status: string }[]
           heuristicNote?: string
-        }>(evaluation.feedbackJson, {})
+        } | null>(evaluation.feedbackJson, null)
       : null
 
   /** Retrocompatível com avaliações antigas sem chaves novas em feedbackJson */
